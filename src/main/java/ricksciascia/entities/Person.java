@@ -31,7 +31,21 @@ public class Person {
 		this.sesso = sesso;
 	}
 
-	public long getId() {
+    @ManyToMany(mappedBy = "listaAtleti")
+    private List<GaraDiAtletica> garePartecipate;
+    @OneToMany(mappedBy = "winner")
+    private List<GaraDiAtletica> gareVinte;
+
+
+    public List<GaraDiAtletica> getGarePartecipate() {
+        return garePartecipate;
+    }
+
+    public List<GaraDiAtletica> getGareVinte() {
+        return gareVinte;
+    }
+
+    public long getId() {
 		return id;
 	}
 

@@ -1,7 +1,6 @@
 package ricksciascia.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -9,7 +8,15 @@ import java.util.List;
 @Entity
 @Table(name = "gara_di_atletica")
 public class GaraDiAtletica extends Event{
+    @ManyToMany
+    @JoinTable(
+            name="persone_gara",
+            joinColumns = @JoinColumn(name = "gara_id"),
+            inverseJoinColumns = @JoinColumn(name = "persona_id")
+    )
     private List<Person> listaAtleti;
+    @ManyToOne
+    @JoinColumn(name = "winner_id")
     private Person winner;
 
     public GaraDiAtletica(){}

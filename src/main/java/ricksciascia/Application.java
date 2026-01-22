@@ -50,7 +50,9 @@ public class Application {
         Concerto concerto2 = new Concerto("Vasco a S.Siro", LocalDate.of(2026,7,30),"Vasco a S.Siro",TipoEvento.PUBBLICO,40000,sSiroFromDB,Genere.POP,false);
         Concerto concerto3 = new Concerto("Pupo a Roma", LocalDate.of(2026,7,27),"incredibile anche in streaming",TipoEvento.PUBBLICO,30000,palalottomaticaFromDB,Genere.POP,true);
 //        PartitaDiCalcio match1= new PartitaDiCalcio(LocalDate.of(2026,1,25),"Big match all Olimpico",TipoEvento.PUBBLICO,90000,olimpicoFromDB,);
-
+//        eventsDAO.save(concerto1);
+//        eventsDAO.save(concerto2);
+//        eventsDAO.save(concerto3);
 //        for (int i = 0; i < 5; i++) {
 //            eventsDAO.save(new Event(
 //                    faker.chuckNorris().fact(),
@@ -66,7 +68,9 @@ public class Application {
 
 //        Person person = peopleDAO.findById();
 //        Event event = eventsDAO.findById();
-        
+//        eventsDAO.getConcertiInStreaming(true).forEach(concerto -> System.out.println(concerto.getTitolo() + " " + concerto));
+
+//        eventsDAO.getConcertiInStreaming(false).forEach(concerto -> System.out.println(concerto.getTitolo() + " " + concerto));
 
 //        Attendance partecipazione = new Attendance(person, event);
             // attendancesDAO.save(partecipazione);

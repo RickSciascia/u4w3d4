@@ -9,7 +9,7 @@
         <class>ricksciascia.entities.Location</class>
         <class>ricksciascia.entities.Person</class>
         <class>ricksciascia.entities.PartitaDiCalcio</class>
-        <class>ricksciascia.entities.GaraDiAtletica</class>
+<!--        <class>ricksciascia.entities.GaraDiAtletica</class>-->
         <class>ricksciascia.entities.Concerto</class>
 
         <properties>
