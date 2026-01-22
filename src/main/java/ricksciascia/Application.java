@@ -37,15 +37,15 @@ public class Application {
         Person person1 = new Person(faker.name().firstName(), faker.name().lastName(), faker.internet().emailAddress(), LocalDate.now(), rndm.nextInt(0, 2) == 0 ? 'M' : 'F');
         peopleDAO.save(person1);
 
-        for (int i = 0; i < 5; i++) {
-            eventsDAO.save(new Event(
-                    faker.chuckNorris().fact(),
-                    LocalDate.of(rndm.nextInt(2025, 2027),
-                            rndm.nextInt(1, 13),
-                            rndm.nextInt(1, 29)),
-                    faker.lorem().fixedString(50),
-                    rndm.nextInt(1, 3) == 1 ? TipoEvento.PRIVATO : TipoEvento.PUBBLICO,
-                    rndm.nextInt(1, 1000), rndm.nextInt(0, 2) == 0 ? location1 : location2));
+//        for (int i = 0; i < 5; i++) {
+//            eventsDAO.save(new Event(
+//                    faker.chuckNorris().fact(),
+//                    LocalDate.of(rndm.nextInt(2025, 2027),
+//                            rndm.nextInt(1, 13),
+//                            rndm.nextInt(1, 29)),
+//                    faker.lorem().fixedString(50),
+//                    rndm.nextInt(1, 3) == 1 ? TipoEvento.PRIVATO : TipoEvento.PUBBLICO,
+//                    rndm.nextInt(1, 1000), rndm.nextInt(0, 2) == 0 ? location1 : location2));
 
 
             // ******************** PARTECIPAZIONE AD UN EVENTO ************************
@@ -67,9 +67,9 @@ public class Application {
             // Eliminando un evento dovrebbe eliminare anche le partecipazioni ad esso collegate
 //        eventsDAO.findByIdAndDelete(24);
 
-
-            em.close();
-            emf.close();
-        }
+//
+//            em.close();
+//            emf.close();
+//        }
     }
 }
