@@ -18,7 +18,7 @@ public class PartitaDiCalcio extends Event {
     public PartitaDiCalcio(){
     }
 //    costruttore custom
-    public PartitaDiCalcio(String titolo, LocalDate dataEvento, String descrizione,TipoEvento tipoEvento,int numeroMaxPart, Location locationPartita,
+    public PartitaDiCalcio(LocalDate dataEvento, String descrizione,TipoEvento tipoEvento,int numeroMaxPart, Location locationPartita,
                            String homeTeam, String awayTeam, String winningTeam, int golHomeTeam, int golAwayTeam)
     {
         super(homeTeam + " - " + awayTeam,dataEvento,descrizione,tipoEvento,numeroMaxPart,locationPartita);

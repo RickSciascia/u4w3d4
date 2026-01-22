@@ -28,14 +28,28 @@ public class Application {
 
         // ******************** SALVATAGGIO LOCATIONS, UTENTI E EVENTI ************************
 
-        Location location1 = new Location(faker.address().city(), faker.address().cityName());
-        locationsDAO.save(location1);
-
-        Location location2 = new Location(faker.address().city(), faker.address().cityName());
-        locationsDAO.save(location2);
+//        Location location1 = new Location(faker.address().city(), faker.address().cityName());
+        Location sanSiro = new Location("Stadio Giuseppe Meazza in San Siro", "Milano");
+//        locationsDAO.save(sanSiro);
+//        Location location2 = new Location(faker.address().city(), faker.address().cityName());
+        Location palalottomatica = new Location("Pala Lottomatica", "Roma");
+        Location olimpico = new Location("Stadio Olimpico di Roma", "Roma");
+//        locationsDAO.save(palalottomatica);
+//        locationsDAO.save(olimpico);
 
         Person person1 = new Person(faker.name().firstName(), faker.name().lastName(), faker.internet().emailAddress(), LocalDate.now(), rndm.nextInt(0, 2) == 0 ? 'M' : 'F');
-        peopleDAO.save(person1);
+        Person person2 = new Person(faker.name().firstName(), faker.name().lastName(), faker.internet().emailAddress(), LocalDate.now(), rndm.nextInt(0, 2) == 0 ? 'M' : 'F');
+        Person person3 = new Person(faker.name().firstName(), faker.name().lastName(), faker.internet().emailAddress(), LocalDate.now(), rndm.nextInt(0, 2) == 0 ? 'M' : 'F');
+//        peopleDAO.save(person1);
+//        peopleDAO.save(person2);
+//        peopleDAO.save(person3);
+        Location sSiroFromDB = locationsDAO.findById(52);
+        Location palalottomaticaFromDB = locationsDAO.findById(53);
+        Location olimpicoFromDB = locationsDAO.findById(54);
+        Concerto concerto1 = new Concerto("Pupo a S.Siro", LocalDate.of(2026,7,24),"incredibile",TipoEvento.PUBBLICO,40000,sSiroFromDB,Genere.POP,false);
+        Concerto concerto2 = new Concerto("Vasco a S.Siro", LocalDate.of(2026,7,30),"Vasco a S.Siro",TipoEvento.PUBBLICO,40000,sSiroFromDB,Genere.POP,false);
+        Concerto concerto3 = new Concerto("Pupo a Roma", LocalDate.of(2026,7,27),"incredibile anche in streaming",TipoEvento.PUBBLICO,30000,palalottomaticaFromDB,Genere.POP,true);
+//        PartitaDiCalcio match1= new PartitaDiCalcio(LocalDate.of(2026,1,25),"Big match all Olimpico",TipoEvento.PUBBLICO,90000,olimpicoFromDB,);
 
 //        for (int i = 0; i < 5; i++) {
 //            eventsDAO.save(new Event(
@@ -52,6 +66,7 @@ public class Application {
 
 //        Person person = peopleDAO.findById();
 //        Event event = eventsDAO.findById();
+        
 
 //        Attendance partecipazione = new Attendance(person, event);
             // attendancesDAO.save(partecipazione);

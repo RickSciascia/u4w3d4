@@ -8,6 +8,9 @@
         <class>ricksciascia.entities.Event</class>
         <class>ricksciascia.entities.Location</class>
         <class>ricksciascia.entities.Person</class>
+        <class>ricksciascia.entities.PartitaDiCalcio</class>
+        <class>ricksciascia.entities.GaraDiAtletica</class>
+        <class>ricksciascia.entities.Concerto</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/u4w3d4"/>

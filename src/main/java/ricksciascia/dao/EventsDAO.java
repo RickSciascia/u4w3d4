@@ -1,9 +1,14 @@
 package ricksciascia.dao;
 
+import jakarta.persistence.TypedQuery;
+import ricksciascia.entities.Concerto;
 import ricksciascia.entities.Event;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import ricksciascia.entities.Genere;
+
+import java.util.List;
 
 public class EventsDAO {
     private EntityManager em;
@@ -44,5 +49,16 @@ public class EventsDAO {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+    public List<Concerto> getConcertiInStreaming(boolean streaming) {
+        TypedQuery<Concerto> query = em.createQuery("SELECT concerto FROM Concerto concerto WHERE concerto.inStreaming = :isStreaming", Concerto.class);
+        query.setParameter("isStreaming", streaming);
+        return query.getResultList();
+    }
+
+    public List<Concerto> getConcertiPerGenere(Genere genere) {
+        TypedQuery<Concerto> query = em.createQuery("SELECT c From Concerto c WHERE c.genere = :genere", Concerto.class);
+        query.setParameter("genere",genere);
+        return query.getResultList();
     }
 }
